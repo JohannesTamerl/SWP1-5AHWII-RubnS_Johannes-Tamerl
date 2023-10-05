@@ -1,5 +1,5 @@
 import random
-import matplotlib
+import matplotlib.pyplot as plt
 
 list = []
 emptylist = []
@@ -13,7 +13,7 @@ def getlist(count):
 
 def getnumbers(list):
     newlist = list.copy()
-    for x in range(1, 7):
+    for x in range(0, 6):
         randomnumber = random.randint(0, len(newlist) - 1 - x)
         newlist[randomnumber], newlist[len(newlist) - x - 1] = newlist[len(newlist) - x - 1], newlist[randomnumber]
     return newlist[-6:]
@@ -34,6 +34,7 @@ print(mydictionary.__str__())
 
 #Zufallszahlen generieren speichern und ausgeben
 
+
 randomnumbers = []
 for x in range(1000):
     randomnumbers = getnumbers(list)
@@ -45,3 +46,5 @@ print(mydictionary.__str__())
 names = mydictionary.keys()
 values = mydictionary.values()
 
+plt.bar(range(len(mydictionary)), values, tick_label=names)
+plt.show()
