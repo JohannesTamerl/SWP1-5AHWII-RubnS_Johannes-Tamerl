@@ -34,10 +34,6 @@ print(mydictionary.__str__())
 
 #Zufallszahlen generieren speichern und ausgeben
 
-#randomnumbers = getnumbers(list)
-#print(randomnumbers)
-#countup(randomnumbers, mydictionary)
-#print(mydictionary)
 randomnumbers = []
 for x in range(1000):
     randomnumbers = getnumbers(list)
