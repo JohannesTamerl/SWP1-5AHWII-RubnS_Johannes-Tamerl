@@ -59,6 +59,9 @@ def drilling(cards):
 def straight(cards):
     values = [get_symbol(card) for card in cards]
     values.sort()
+    symbols = [9, 10, 11, 12, 0]
+    if values == symbols:
+        return True;
     for i in range(0, 4):
         if values[i] != values[i + 1] - 1:
             return False
@@ -86,8 +89,9 @@ def straight_flush(cards):
 def royal_flush(cards):
     values = [get_symbol(card) for card in cards]
     values.sort()
-    symbols = [8, 9, 10, 11, 12]
-    return values == symbols
+    symbols = [9, 10, 11, 12, 0]
+    if (values == symbols) and (values == flush(cards)):
+        return True
 
 
 def highest_card(cards):
@@ -167,7 +171,7 @@ def simulation(durchgaenge):
     return wahrscheinlichkeit
     print(combinations)
     print(wahrscheinlichkeit)
-list = simulation(10000)
+list = simulation(1000)
 print(list.values())
 print(list.keys())
 plt.pie(list.values(), labels=list.keys())
