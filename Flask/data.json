@@ -1,0 +1,7 @@
+{
+    "rock": 0,
+    "paper": 1,
+    "scissors": 2,
+    "spock": 3,
+    "lizard": 4
+}
